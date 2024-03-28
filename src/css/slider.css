@@ -1,0 +1,34 @@
+.swiper {
+    width: 1600px;
+    height: 777px;
+    border: 1px solid #EAEAEA;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background-color: #F7F7F7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 597px;
+    height: 724px;
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .swiper {
+        width: 768px;
+        height: 777px;
+        border: 1px solid #EAEAEA;
+    }
+
+    .swiper-slide img {
+        width: 466px;
+        height: 565px;
+    }
+}

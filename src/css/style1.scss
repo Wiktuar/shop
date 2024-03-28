@@ -1,0 +1,696 @@
+@import "vars";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+header {
+  @include dimensions(100%, 840px);
+  margin-bottom: 65px;
+  background-color: #222;
+
+  .header_top {
+    @include flex_properties(space-between);
+    @include dimensions(1150px, 75px);
+    margin: 0 auto;
+
+    .logo {
+      width: 44px;
+      height: 38px;
+      margin-right: 41px;
+    }
+
+    .search {
+      width: 26px;
+    }
+
+    .header_buttons {
+      @include flex_properties(flex-start);
+      position: relative;
+      gap: 33px;
+      @include dimensions(169px, 38px);
+
+      .menu_image_burger {
+        @include dimensions(32px, 23px);
+      }
+
+      .menu_image_cabinet {
+        @include dimensions(29px, 29px);
+      }
+
+      .menu_image_basket {
+        @include dimensions(32px, 29px);
+      }
+
+      .quantity_products {;
+        @include flex_properties($justify);
+        position: absolute;
+        top: -5px;
+        left: 150px;
+        @include dimensions(19px, 19px);
+        border-radius: 50%;
+        background-color: #F16D7F;
+        color: #FFF;
+        font-family: $font;
+        font-size: 12px;
+        font-weight: 400;
+      }
+    }
+  }
+
+  .header_bottom {
+    @include dimensions(100%, 764px);
+    background-color: #F1E4E6;
+
+    .header_bottom_container {
+      @include flex_properties($justify);
+      width: 1600px;
+      margin: 0 auto;
+
+      .left_block {
+        width: 50%;
+      }
+
+      .right_block {
+        display: flex;
+        align-items: center;
+        width: 50%;
+
+        .main_header {
+          margin-left: 16px;
+          color: #222;
+          font-family: $font;
+          font-size: 48px;
+          font-weight: 900;
+
+          .subtitle {
+            color: #222;
+            font-family: $font;
+            font-size: 32px;
+            font-weight: 700;
+
+            .subtitle_add {
+              color: #F16D7F;
+              font-family: $font;
+              font-size: 32px;
+              font-weight: 700;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+  .grid {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(3, 360px);
+    grid-template-rows: 260px 180px;
+    justify-content: center;
+    @include dimensions(1200px, 470px);
+    margin: 0 auto 96px;
+    background: #FFF;
+
+    .grid-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .grid-item:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0,0,0,.5);
+      z-index: 2;
+    }
+
+    .grid-item1 {
+      background-image: url("../img/image1.png");
+    }
+
+    .grid-item2 {
+      background-image: url("../img/image2.png");
+    }
+
+    .grid-item3 {
+      background-image: url("../img/image3.png");
+    }
+
+    .grid-item4 {
+      background-image: url("../img/image4.png");
+      grid-column: span 3;
+    }
+
+    .grid-item h3 {
+      text-align: center;
+      color: #F16D7F;
+      font-family: $font;
+      font-size: 24px;
+      font-weight: 700;
+      z-index: 3;
+
+      .sale {
+        color: #FFF;
+        text-align: center;
+        font-family: $font;
+        font-size: 16px;
+        font-weight: 400;
+      }
+    }
+  }
+
+.product_headers {
+  @include flex_properties($justify);
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 48px;
+
+  .product_headers h3 {
+    color: #222;
+    font-family: $font;
+    font-size: 30px;
+    font-weight: 400;
+  }
+
+  .subtitle2 {
+    color: #9F9F9F;
+    font-family: $font;
+    font-size: 14px;
+    font-weight: 400;
+  }
+}
+
+.products_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 360px);
+  grid-template-rows: repeat(2, 581px);
+  justify-content: center;
+  gap: 30px;
+  width: 1200px;
+  margin: 0 auto  48px;
+  background: #FFF;
+
+  .subscription {
+    padding: 24px 28px 20px 18px;
+
+    .subscription h4 {
+      margin-bottom: 16px;
+      color: #000;
+      font-family: $font;
+      font-size: 13px;
+      font-weight: 400;
+    }
+
+    .desc {
+      margin-bottom: 18px;
+      color: #5D5D5D;
+      font-family: $font;
+      font-size: 14px;
+      font-weight: 300;
+    }
+
+    .price {
+      color: #F16D7F;
+      font-family: $font;
+      font-size: 16px;
+      font-weight: 400;
+    }
+  }
+}
+
+.getAll {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+
+  .getAllProducts {
+    padding: 1rem 2rem;
+    background-color: #FFF;;
+    color: #F26376;
+    font-family: $font;
+    font-size: 16px;
+    font-weight: 400;
+  }
+}
+
+.adv_section {
+  @include flex_properties($justify);
+  gap: 30px;
+  @include dimensions(1600px, 341px);
+  margin: 0 auto;
+  background-color: #222224;
+
+  .advantages {
+    @include flex_properties(flex-start);
+    flex-direction: column;
+    gap: 17px;
+    @include dimensions(360px, 134px);
+
+    .advantages img {
+      display: block;
+      width: 45px;
+    }
+
+    .adv_header {
+      color: #FBFBFB;
+      font-family: $font;
+      font-size: 20px;
+      font-weight: 400;
+    }
+
+    .adv_description {
+      padding: 0 10px;
+      color: #FBFBFB;
+      text-align: center;
+      font-family: $font;
+      font-size: 14px;
+      font-weight: 300;
+    }
+  }
+}
+
+.subscribe {
+  @include flex_properties($justify);
+  gap: 223px;
+  margin: 0 auto;
+  @include dimensions(1600px, 448px);
+  background-color: #F4F4F4B2;
+
+  .sub_left {
+    @include flex_properties(flex-start);
+    flex-direction: column;
+    gap: 30px;
+    @include dimensions(360px, 225px);
+
+    .quote{
+      text-align: center;
+    }
+  }
+
+  .sub_right {
+    @include flex_properties(flex-start);
+    flex-direction: column;
+    @include dimensions(557px, 142px);
+
+    .subscribe_header {
+      text-align: center;
+
+      .sub_subscribe {
+        font-size: 14px;
+      }
+    }
+
+    form {
+      display: flex;
+      justify-content: center;
+
+      input {
+        @include dimensions(256px, 49px);
+        background-color: #E1E1E1;
+        border: none;
+        border-radius: 25px 0 0 25px;
+      }
+
+      input[type=text]::placeholder {
+        padding-left: 22px;
+        color: #222224;
+        font-family: $font;
+        font-size: 14px;
+        font-weight: 400;
+      }
+
+      .sub_btn {
+        @include dimensions(100px, 49px);
+        background-color: #F16D7F;
+        border-radius: 0 25px 25px 0;
+        border: none;
+      }
+    }
+  }
+}
+
+footer {
+  @include dimensions(1600px, 79px);
+  margin: 0 auto;
+  background-color: #222224;
+
+  p {
+    display: inline-block;
+    margin: 30px 0 30px 235px;
+    color: #FBFBFB;
+    font-family: $font;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+  .social_nets {
+    margin-left: 665px;
+    display: inline-block;
+    list-style-type: none;
+
+    li {
+      display: inline-block;
+      margin-right: 8px;
+
+      a {
+        @include flex_properties($justify);
+        width: 32px;
+        height: 32px;
+        background-color: white;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    @include dimensions(100%, 443px);
+    .header_top {
+      @include dimensions(768px, 75px);
+      padding: 18px 32px;
+    }
+
+    .header_bottom {
+      @include dimensions(100%, 368px);
+
+      .header_bottom_container {
+        @include flex_properties($justify);
+        width: 768px;
+
+        .left_block {
+          width: 50%;
+
+          .main_image {
+            @include dimensions(385px, 369px)
+          }
+        }
+
+        .right_block {
+          display: flex;
+          align-items: center;
+          width: 50%;
+
+          .main_header {
+            margin-left: 16px;
+            color: #222;
+            font-family: $font;
+            font-size: 44px;
+            font-weight: 900;
+
+            .subtitle {
+              font-size: 24px;
+
+              .subtitle_add {
+                font-size: 24px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  //styles for grid
+  .grid {
+    gap: 20px;
+    grid-template-columns: repeat(3, 232px);
+    grid-template-rows: 167px 116px;
+    @include dimensions(768px, 373px);
+  }
+
+  //styles for product_grid
+  .products_grid {
+    grid-template-columns: repeat(2, 360px);
+    grid-template-rows: repeat(3, 581px);
+    grid-auto-rows: 0;
+    overflow-y: hidden;
+    justify-content: center;
+    gap: 16px;
+    max-width: 768px;
+  }
+
+  //styles for advantages
+  .adv_section {
+    @include flex_properties($justify);
+    flex-direction: column;
+    gap: 30px;
+    max-width: 768px;
+    min-height: 610px;
+    padding: 0 49px;
+    .advantages {
+      @include flex_properties(flex-start);
+      flex-direction: column;
+      gap: 17px;
+      @include dimensions(360px, 134px);
+
+      .advantages img {
+        display: block;
+        width: 45px;
+      }
+
+      .adv_header {
+        color: #FBFBFB;
+        font-family: $font;
+        font-size: 20px;
+        font-weight: 400;
+      }
+
+      .adv_description {
+        padding: 0 10px;
+        color: #FBFBFB;
+        text-align: center;
+        font-family: $font;
+        font-size: 14px;
+        font-weight: 300;
+      }
+    }
+  }
+
+  //subscribe block and footer
+  .subscribe {
+    flex-direction: column;
+    gap: 0;
+    max-width: 768px;
+
+    .sub_left {
+      padding-top: 64px;
+      .quote {
+        font-size: 20px;
+      }
+    }
+
+    .sub_right {
+      padding-top: 48px;
+      padding-bottom: 219px;
+
+      .subscribe_header {
+        margin-bottom: 27px;
+      }
+    }
+  }
+
+  footer {
+    @include flex_properties(space-between);
+    flex-wrap: wrap;
+    max-width: 768px;
+    padding: 0 32px;
+
+    p {
+      margin: 0;
+    }
+
+    .social_nets {
+      margin: 0;
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  header {
+    @include dimensions(100%, 443px);
+
+    .header_top {
+      width: 100%;
+      padding: 18px 32px;
+
+      .header_buttons {
+        @include flex_properties(flex-end);
+        position: relative;
+        gap: 33px;
+        @include dimensions(33px, 38px);
+
+        .menu_image_burger {
+          @include dimensions(32px, 23px);
+        }
+
+        .menu_image_cabinet {
+          display: none;
+        }
+
+        .menu_image_basket {
+          display: none;
+        }
+
+        .quantity_products {;
+          display: none;
+        }
+      }
+    }
+
+    .header_bottom {
+      @include dimensions(100%, 363px);
+
+      .header_bottom_container {
+        width: 100%;
+
+        .left_block {
+          display: none;
+
+          .main_image {
+            display: none;
+          }
+        }
+
+        .right_block {
+          @include flex_properties($justify);
+          width: 100%;
+          height: 363px;
+
+          .main_header {
+            margin-left: 16px;
+            color: #222;
+            font-family: $font;
+            font-size: 38px;
+            font-weight: 900;
+
+            .subtitle {
+              color: #222;
+              font-family: $font;
+              font-size: 24px;
+              font-weight: 700;
+
+              .subtitle_add {
+                color: #F16D7F;
+                font-family: $font;
+                font-size: 24px;
+                font-weight: 700;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .grid {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(3, 248px) 111px;
+    justify-content: center;
+    @include dimensions(92%, 1002px);
+    padding-top:  64px;
+    margin-bottom: 96px;
+
+    .grid-item1 {
+      background-size: 100%;
+    }
+
+    .grid-item2 {
+      background-size: 100%;
+    }
+
+    .grid-item3 {
+      background-size: 100%;
+    }
+
+    .grid-item4 {
+      background-size: 100%;
+      grid-column: span 1;
+    }
+  }
+
+  .products_grid {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(6, 16%);
+    justify-content: center;
+    gap: 30px;
+    width: 98%;
+    height: 3630px;
+    margin: 0 auto  48px;
+    background: #FFF;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .adv_section {
+    @include flex_properties($justify);
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+    min-height: 610px;
+    padding: 0 5%;
+
+    .advantages {
+      @include flex_properties(flex-start);
+      flex-direction: column;
+      gap: 17px;
+      width: 90%;
+      min-height: 134px;
+    }
+  }
+
+  //subscribe block and footer
+  .subscribe {
+    flex-direction: column;
+    gap: 0;
+    max-width: 425px;
+
+    .sub_left {
+      padding-top: 64px;
+      .quote {
+        font-size: 18px;
+      }
+    }
+
+    .sub_right {
+      padding-top: 48px;
+      padding-bottom: 219px;
+
+      .subscribe_header {
+        margin-bottom: 27px;
+      }
+    }
+  }
+
+  footer {
+    @include flex_properties($justify);
+    gap: 40px;
+    max-width: 425px;
+    min-height: 143px;
+    padding: 43px 32px;
+
+    p {
+      margin: 0;
+      order: 2;
+    }
+
+    .social_nets {
+      margin: 0;
+      order: 1;
+    }
+  }
+}
+
